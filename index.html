@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="SysInfApp">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="cache-control" content="no-store">
+		<title>SysInfApp</title>
+		<link rel="stylesheet" type="text/css" href="./css/font-roboto.css">
+		<link rel="stylesheet" type="text/css" href="./css/angular-material.css">
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+		<script type="application/javascript" src="./config.js"></script>
+		<script type="application/javascript" src="./js/app-update.js"></script>
+		<script type="application/javascript" src="./angular/angular.js"></script>
+		<script type="application/javascript" src="./angular/angular-animate.js"></script>
+		<script type="application/javascript" src="./angular/angular-aria.js"></script>
+		<script type="application/javascript" src="./angular/angular-messages.js"></script>
+		<script type="application/javascript" src="./angular/angular-route.js"></script>
+		<script type="application/javascript" src="./angular/angular-material.js"></script>
+		<script type="application/javascript" src="./angular/app.js"></script>
+		<script type="application/javascript" src="./angular/directives.js"></script>
+		<script type="application/javascript" src="./angular/services.js"></script>
+		<script type="application/javascript" src="./angular/filters.js"></script>
+		<script type="application/javascript" src="./controllers/settings.js"></script>
+		<script type="application/javascript" src="./controllers/cpu.js"></script>
+		<script type="application/javascript" src="./controllers/ram.js"></script>
+		<script type="application/javascript" src="./controllers/gpu.js"></script>
+		<script type="application/javascript" src="./controllers/audio.js"></script>
+		<script type="application/javascript" src="./controllers/system.js"></script>
+		<script type="application/javascript" src="./controllers/opsys.js"></script>
+		<script type="application/javascript" src="./controllers/storage.js"></script>
+		<script type="application/javascript" src="./controllers/battery.js"></script>
+	</head>
+	<body ng-controller="MainCtrl" dir="{{langStrings._dir}}" ng-cloak>
+		<div layout="column" layout-fill>
+
+			<!-- main -->
+			<main class="flex" ng-hide="settingsOpen">
+				<md-content>
+					<md-tabs md-selected="currTabIndex" md-border-bottom md-autoselect md-dynamic-height>
+						<md-tab ng-repeat="t in tabs" label="{{t.label}}">
+							<ng-include src="'templates/' + t.page"></ng-include>
+						</md-tab>
+					</md-tabs>
+				</md-content>
+			</main>
+
+			<!-- settings -->
+			<main class="flex" ng-show="settingsOpen" ng-include="'templates/settings.html'"></main>
+
+			<!-- footer -->
+			<footer id="appFooter" ng-hide="settingsOpen">
+				<md-toolbar class="md-scroll-shrink">
+					<div class="md-toolbar-tools">
+						<md-button id="settingsBtn" class="md-fab md-mini md-primary" ng-click="openSettings()">
+							<md-icon md-svg-icon="./imgs/settings.svg"></md-icon>
+						</md-button>
+						<div class="flex">
+							<div class="footerText">SysInfApp {{appVersion}}</div>
+							<div class="footerText">systeminformation {{siVersion}}</div>
+						</div>
+						<md-button class="md-raised md-primary" ng-click="exitApp()">{{langStrings.exit}}</md-button>
+					</div>
+				</md-toolbar>
+			</footer>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,85 @@
+<md-content ng-controller="StorageCtrl">
+
+	<md-card class="sysinfoCard">
+		<md-card-title>
+			<md-card-title-text>{{$parent.langStrings.logical_volumes}}</md-card-title-text>
+		</md-card-title>
+		<md-card-content>
+			<md-card ng-repeat="item in $parent.sysinfo.storage.volumes" class="md-padding">
+				<form>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{$parent.langStrings.name}}</label>
+							<input type="text" ng-model="item.name" readonly="readonly">
+						</md-input-container>
+					</div>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{$parent.langStrings.size}}</label>
+							<input type="text" ng-model="item.size" readonly="readonly">
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{$parent.langStrings.type}}</label>
+							<input type="text" ng-model="item.physical" readonly="readonly">
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{$parent.langStrings.file_system}}</label>
+							<input type="text" ng-model="item.filesystem" readonly="readonly">
+						</md-input-container>
+					</div>
+				</form>
+			</md-card>
+		</md-card-content>
+	</md-card>
+
+	<md-card class="sysinfoCard">
+		<md-card-title>{{$parent.langStrings.physical_drives}}</md-card-title>
+		<md-card-content>
+			<md-card ng-repeat="item in $parent.sysinfo.storage.disks | orderBy:'-type'" class="md-padding">
+				<form>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{$parent.langStrings.type}}</label>
+							<input type="text" ng-model="item.type" readonly="readonly">
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{$parent.langStrings.interface}}</label>
+							<input type="text" ng-model="item.interface" readonly="readonly">
+						</md-input-container>
+					</div>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{$parent.langStrings.name}}</label>
+							<input type="text" ng-model="item.name" readonly="readonly">
+						</md-input-container>
+					</div>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{$parent.langStrings.capacity_reported}}</label>
+							<input type="text" ng-model="item.size_reported" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{$parent.langStrings.capacity_actual}}</label>
+							<input type="text" ng-model="item.size_actual" readonly>
+						</md-input-container>
+					</div>
+					<div layout="row" >
+						<md-input-container class="md-block flex">
+							<label>{{$parent.langStrings.cylinders}}</label>
+							<input type="text" ng-model="item.cylinders" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{$parent.langStrings.heads}}</label>
+							<input type="text" ng-model="item.heads" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{$parent.langStrings.sectors}}</label>
+							<input type="text" ng-model="item.sectors" readonly>
+						</md-input-container>
+					</div>
+				</form>
+			</md-card>
+		</md-card-content>
+	</md-card>
+
+</md-content>

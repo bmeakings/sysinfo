@@ -1,0 +1,63 @@
+<md-content ng-controller="MemoryCtrl">
+
+	<md-card class="sysinfoCard">
+		<md-card-title>{{$parent.langStrings.info}}</md-card-title>
+		<md-card-content>
+			<md-card class="md-padding">
+				<form>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{$parent.langStrings.total}}</label>
+							<input type="text" ng-model="$parent.sysinfo.ram.info.total" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{$parent.langStrings.used}}</label>
+							<input type="text" ng-model="$parent.sysinfo.ram.info.used" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{$parent.langStrings.available}}</label>
+							<input type="text" ng-model="$parent.sysinfo.ram.info.available" readonly>
+						</md-input-container>
+					</div>
+				</form>
+			</md-card>
+		</md-card-content>
+	</md-card>
+
+	<md-card class="sysinfoCard">
+		<md-card-title>{{$parent.langStrings.mods_installed}}</md-card-title>
+		<md-card-content>
+			<md-card ng-repeat="item in $parent.sysinfo.ram.layout" class="md-padding">
+				<form>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{$parent.langStrings.make}}</label>
+							<input type="text" ng-model="item.make" readonly>
+						</md-input-container>
+					</div>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{$parent.langStrings.part_no}}</label>
+							<input type="text" ng-model="item.part" readonly>
+						</md-input-container>
+					</div>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{$parent.langStrings.capacity}}</label>
+							<input type="text" ng-model="item.size" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{$parent.langStrings.clock}}</label>
+							<input type="text" ng-model="item.clock" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{$parent.langStrings.voltage}}</label>
+							<input type="text" ng-model="item.voltage" readonly>
+						</md-input-container>
+					</div>
+				</form>
+			</md-card-content>
+		</md-card-content>
+	</md-card>
+
+</md-content>

@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+html, body {
+	user-select: none;
+}
+.md-errors-spacer {
+	display: none;
+}
+main.flex {
+	overflow-y: auto;
+}
+md-card > md-card-title {
+	font-weight: bold;
+	padding: 8px;
+}
+md-card > md-card-content {
+	padding: 8px;
+}
+md-card.sysinfoCard {
+	position: relative;
+	background-color: #ddd;
+	margin-bottom: 10px;
+}
+md-card.sysinfoCard > md-card-content > md-card {
+	margin: 0px 0px 10px;
+}
+md-card.sysinfoCard > md-card-content > md-card:last-of-type {
+	margin-bottom: 0px;
+}
+md-input-container {
+	margin-bottom: 8px;
+}
+form > .layout-row:last-child > md-input-container {
+	margin-bottom: 0px;
+}
+.logoImg {
+	position: absolute;
+	top: 45px;
+	max-width: 150px;
+	max-height: 78px;
+}
+body[dir="ltr"] .logoImg {
+	right: 16px;
+}
+body[dir="rtl"] .logoImg {
+	left: 16px;
+}
+.logoImg.os {
+	max-height: 40px;
+}
+.reloadBtn {
+	width: 24px !important;
+	height: 24px !important;
+	line-height: initial !important;
+	min-height: initial;
+	margin: 0px;
+	padding: 0px;
+}
+.reloadBtn > md-icon {
+	width: 12px;
+	height: 12px;
+	line-height: initial;
+	min-height: initial;
+}
+body[dir="rtl"] #settingsBtn {
+	margin-left: 8px;
+}
+#appFooter > md-toolbar {
+	background-color: transparent;
+	border-top: 1px solid rgba(0, 0, 0, 0.12);
+	color: #000;
+}
+.footerText {
+	font-size: 14px;
+}

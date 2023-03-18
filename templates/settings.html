@@ -1,0 +1,27 @@
+<div ng-controller="SettingsCtrl">
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2 flex md-trucate>{{$parent.langStrings.settings}}</h2>
+			<md-button class="md-icon-button">
+				<md-icon md-svg-icon="./imgs/close.svg" ng-click="closeSettings()"></md-icon>
+			</md-button>
+		</div>
+	</md-toolbar>
+	<md-content class="md-padding">
+		<md-card>
+			<md-card-content>
+				<div layout="row" layout-align="space-between center">
+					<span>{{$parent.langStrings.language}}</span>
+					<md-select
+						class="md-no-underline"
+						ng-model="settings.language"
+						ng-change="langChanged()"
+						aria-label="Language"
+					>
+						<md-option ng-repeat="(key, val) in settings.langsMenu" value="{{key}}">{{val}}</md-option>
+					</md-select>
+				</div>
+			</md-card-content>
+		</md-card>
+	</md-content>
+</div>
