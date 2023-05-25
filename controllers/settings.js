@@ -2,7 +2,7 @@
 
 (angular
 	.module(appName)
-	.controller('SettingsCtrl', function($scope, $http) {
+	.controller('SettingsCtrl', ($scope, $http) => {
 		const savedLang = localStorage.getItem('language');
 
 		$scope.settings = {

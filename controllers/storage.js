@@ -2,7 +2,7 @@
 
 (angular
 	.module(appName)
-	.controller('StorageCtrl', function($scope, $timeout, services) {
+	.controller('StorageCtrl', ($scope, $timeout, services) => {
 		(systeminfo
 			.diskLayout()
 			.then((data) => {

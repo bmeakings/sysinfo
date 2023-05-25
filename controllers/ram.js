@@ -2,8 +2,8 @@
 
 (angular
 	.module(appName)
-	.controller('MemoryCtrl', function($scope, $timeout, services) {
-		const getStaticData = () => {
+	.controller('MemoryCtrl', ($scope, $timeout, services) => {
+		function getStaticData() {
 			(systeminfo
 				.memLayout()
 				.then((data) => {
@@ -34,9 +34,9 @@
 					console.log(err);
 				})
 			);
-		};
+		}
 
-		const getDynamicData = () => {
+		function getDynamicData() {
 			(systeminfo
 				.mem()
 				.then((data) => {
@@ -61,7 +61,7 @@
 			);
 
 			setTimeout(getDynamicData, $scope.$parent.updateFreq);
-		};
+		}
 
 		getStaticData();
 		getDynamicData();

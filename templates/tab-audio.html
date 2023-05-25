@@ -1,25 +1,25 @@
 <md-content ng-controller="AudioCtrl">
 
 	<md-card class="sysinfoCard">
-		<md-card-title>{{$parent.langStrings.audio}}</md-card-title>
+		<md-card-title>{{ $parent.langStrings.audio }}</md-card-title>
 		<md-card-content>
 			<md-card ng-repeat="item in $parent.sysinfo.audio.list" class="md-padding">
 				<form>
 					<div layout="row">
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.type}}</label>
+							<label>{{ $parent.langStrings.type }}</label>
 							<input type="text" ng-model="item.type" readonly>
 						</md-input-container>
 					</div>
 					<div layout="row">
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.manufacturer}}</label>
+							<label>{{ $parent.langStrings.manufacturer }}</label>
 							<input type="text" ng-model="item.make" readonly>
 						</md-input-container>
 					</div>
 					<div layout="row">
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.name}}</label>
+							<label>{{ $parent.langStrings.name }}</label>
 							<input type="text" ng-model="item.name" readonly>
 						</md-input-container>
 					</div>

@@ -2,7 +2,7 @@
 
 (angular
 	.module(appName)
-	.controller('AudioCtrl', function($scope, $timeout, services) {
+	.controller('AudioCtrl', ($scope, $timeout, services) => {
 		(systeminfo
 			.audio()
 			.then((data) => {

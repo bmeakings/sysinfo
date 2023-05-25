@@ -2,7 +2,7 @@
 
 (angular
 	.module(appName)
-	.controller('GraphicsCtrl', function($scope, $timeout, services) {
+	.controller('GraphicsCtrl', ($scope, $timeout, services) => {
 		(systeminfo
 			.graphics()
 			.then((data) => {

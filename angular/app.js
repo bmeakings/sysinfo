@@ -1,15 +1,13 @@
 'use strict';
 
 const appName = 'SysInfApp';
-const appUpdateID = 'systeminfo';
 
-const systeminfo = require('systeminformation');
 const ipc = require('electron').ipcRenderer;
+const systeminfo = require('systeminformation');
 
 (angular
 	.module(appName, ['ngMaterial'])
-	.controller('MainCtrl', function($scope, $http, $timeout)
-	{
+	.controller('MainCtrl', ($scope, $http, $timeout) => {
 		const savedLang = localStorage.getItem('language');
 
 		$scope.currLang = savedLang || 'en';
@@ -47,7 +45,7 @@ const ipc = require('electron').ipcRenderer;
 		$scope.setLanguage = (lang) => {
 			($http
 				.get('./l10n/' + lang + '.json')
-				.then(function(response) {
+				.then((response) => {
 					try {
 						$scope.langStrings = response.data;
 

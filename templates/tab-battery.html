@@ -1,49 +1,49 @@
 <md-content ng-controller="BatteryCtrl">
 
 	<md-card class="sysinfoCard" ng-show="$parent.sysinfo.battery.available">
-		<md-card-title>{{$parent.langStrings.info}}</md-card-title>
+		<md-card-title>{{ $parent.langStrings.info }}</md-card-title>
 		<md-card-content>
 			<md-card class="md-padding">
 				<form>
 					<div layout="row">
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.manufacturer}}</label>
+							<label>{{ $parent.langStrings.manufacturer }}</label>
 							<input type="text" ng-model="$parent.sysinfo.battery.make" readonly>
 						</md-input-container>
 					</div>
 					<div layout="row">
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.model}}</label>
+							<label>{{ $parent.langStrings.model }}</label>
 							<input type="text" ng-model="$parent.sysinfo.battery.model" readonly>
 						</md-input-container>
 					</div>
 					<div layout="row">
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.type}}</label>
+							<label>{{ $parent.langStrings.type }}</label>
 							<input type="text" ng-model="$parent.sysinfo.battery.type" readonly>
 						</md-input-container>
 					</div>
 					<div layout="row">
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.capacity_max}}</label>
+							<label>{{ $parent.langStrings.capacity_max }}</label>
 							<input type="text" ng-model="$parent.sysinfo.battery.capacity_max" readonly>
 						</md-input-container>
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.capacity_curr}}</label>
+							<label>{{ $parent.langStrings.capacity_curr }}</label>
 							<input type="text" ng-model="$parent.sysinfo.battery.capacity_curr" readonly>
 						</md-input-container>
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.voltage}}</label>
+							<label>{{ $parent.langStrings.voltage }}</label>
 							<input type="text" ng-model="$parent.sysinfo.battery.voltage" readonly>
 						</md-input-container>
 					</div>
 					<div layout="row">
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.pcnt_remaining}}</label>
+							<label>{{ $parent.langStrings.pcnt_remaining }}</label>
 							<input type="text" ng-model="$parent.sysinfo.battery.remain_pcnt" readonly>
 						</md-input-container>
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.time_remaining}}</label>
+							<label>{{ $parent.langStrings.time_remaining }}</label>
 							<input type="text" ng-model="$parent.sysinfo.battery.remain_time" readonly>
 						</md-input-container>
 					</div>
@@ -53,7 +53,7 @@
 	</md-card>
 
 	<md-card class="sysinfoCard" ng-show="!$parent.sysinfo.battery.available">
-		<md-card-title>{{$parent.langStrings.no_batt_installed}}</md-card-title>
+		<md-card-title>{{ $parent.langStrings.no_batt_installed }}</md-card-title>
 	</md-card>
 
 </md-content>

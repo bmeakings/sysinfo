@@ -3,57 +3,57 @@
 	<!-- general info -->
 	<md-card class="sysinfoCard">
 		<md-card-title>
-			<md-card-title-text>{{$parent.langStrings.info}}</md-card-title-text>
-			<img class="logoImg" ng-src="{{$parent.sysinfo.cpu.info.logo}}" >
+			<md-card-title-text>{{ $parent.langStrings.info }}</md-card-title-text>
+			<img class="logoImg" ng-src="{{ $parent.sysinfo.cpu.info.logo }}">
 		</md-card-title>
 		<md-card-content>
 			<md-card class="md-padding">
 				<form>
 					<div layout="row">
 						<md-input-container class="md-block">
-							<label>{{$parent.langStrings.manufacturer}}</label>
+							<label>{{ $parent.langStrings.manufacturer }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.info.make" readonly="readonly" >
 						</md-input-container>
 					</div>
 					<div layout="row">
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.name}}</label>
+							<label>{{ $parent.langStrings.name }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.info.name" readonly="readonly" >
 						</md-input-container>
 					</div>
 					<div layout="row">
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.installed}}</label>
+							<label>{{ $parent.langStrings.installed }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.info.count" readonly="readonly" >
 						</md-input-container>
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.cores}}</label>
+							<label>{{ $parent.langStrings.cores }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.info.cores" readonly="readonly" >
 						</md-input-container>
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.threads}}</label>
+							<label>{{ $parent.langStrings.threads }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.info.threads" readonly="readonly" >
 						</md-input-container>
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.socket}}</label>
+							<label>{{ $parent.langStrings.socket }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.info.socket" readonly="readonly" >
 						</md-input-container>
 					</div>
 					<div layout="row">
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.family}}</label>
+							<label>{{ $parent.langStrings.family }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.info.family" readonly="readonly" >
 						</md-input-container>
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.model}}</label>
+							<label>{{ $parent.langStrings.model }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.info.model" readonly="readonly" >
 						</md-input-container>
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.stepping}}</label>
+							<label>{{ $parent.langStrings.stepping }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.info.stepping" readonly="readonly" >
 						</md-input-container>
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.revision}}</label>
+							<label>{{ $parent.langStrings.revision }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.info.revision" readonly="readonly" >
 						</md-input-container>
 					</div>
@@ -64,25 +64,25 @@
 
 	<!-- clock speed -->
 	<md-card class="sysinfoCard">
-		<md-card-title>{{$parent.langStrings.clock}}</md-card-title>
+		<md-card-title>{{ $parent.langStrings.clock }}</md-card-title>
 		<md-card-content>
 			<md-card class="md-padding">
 				<form>
 					<div layout="row">
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.base}}</label>
+							<label>{{ $parent.langStrings.base }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.info.base_freq" readonly>
 						</md-input-container>
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.min}}</label>
+							<label>{{ $parent.langStrings.min }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.info.freq.min" readonly>
 						</md-input-container>
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.max}}</label>
+							<label>{{ $parent.langStrings.max }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.info.freq.max" readonly>
 						</md-input-container>
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.current}}</label>
+							<label>{{ $parent.langStrings.current }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.info.freq.avg" readonly>
 						</md-input-container>
 					</div>
@@ -93,21 +93,21 @@
 
 	<!-- cpu load -->
 	<md-card class="sysinfoCard">
-		<md-card-title>{{$parent.langStrings.load}}</md-card-title>
+		<md-card-title>{{ $parent.langStrings.load }}</md-card-title>
 		<md-card-content>
 			<md-card class="md-padding">
 				<form>
 					<div layout="row">
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.current}}</label>
+							<label>{{ $parent.langStrings.current }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.load.curr" readonly>
 						</md-input-container>
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.user}}</label>
+							<label>{{ $parent.langStrings.user }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.load.user" readonly>
 						</md-input-container>
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.system}}</label>
+							<label>{{ $parent.langStrings.system }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.load.sys" readonly>
 						</md-input-container>
 					</div>
@@ -119,20 +119,20 @@
 	<!-- stats -->
 <!--
 	<md-card class="sysinfoCard">
-		<md-card-title>{{$parent.langStrings.stats}}</md-card-title>
+		<md-card-title>{{ $parent.langStrings.stats }}</md-card-title>
 		<md-card-content>
 			<form>
 				<div layout="row">
 					<md-input-container class="md-block flex">
-						<label>{{$parent.langStrings.temperature}}</label>
+						<label>{{ $parent.langStrings.temperature }}</label>
 						<input type="text" ng-model="$parent.sysinfo.cpu.temp.curr" readonly>
 					</md-input-container>
 					<md-input-container class="md-block flex">
-						<label>{{$parent.langStrings.load}}</label>
+						<label>{{ $parent.langStrings.load }}</label>
 						<input type="text" ng-model="$parent.sysinfo.cpu.load.curr" readonly>
 					</md-input-container>
 					<md-input-container class="md-block flex">
-						<label>{{$parent.langStrings.idle}}</label>
+						<label>{{ $parent.langStrings.idle }}</label>
 						<input type="text" ng-model="$parent.sysinfo.cpu.load.idle" readonly>
 					</md-input-container>
 				</div>
@@ -142,25 +142,25 @@
 -->
 	<!-- cache -->
 	<md-card class="sysinfoCard">
-		<md-card-title>{{$parent.langStrings.cache}}</md-card-title>
+		<md-card-title>{{ $parent.langStrings.cache }}</md-card-title>
 		<md-card-content>
 			<md-card class="md-padding">
 				<form>
 					<div layout="row">
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.cache_l1d}}</label>
+							<label>{{ $parent.langStrings.cache_l1d }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.info.cache.l1d" readonly>
 						</md-input-container>
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.cache_l1i}}</label>
+							<label>{{ $parent.langStrings.cache_l1i }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.info.cache.l1i" readonly>
 						</md-input-container>
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.cache_l2t}}</label>
+							<label>{{ $parent.langStrings.cache_l2t }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.info.cache.l2" readonly>
 						</md-input-container>
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.cache_l3t}}</label>
+							<label>{{ $parent.langStrings.cache_l3t }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.info.cache.l3" readonly>
 						</md-input-container>
 					</div>

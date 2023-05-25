@@ -2,7 +2,7 @@
 
 (angular
 	.module(appName)
-	.controller('SystemCtrl', function($scope, $timeout, services) {
+	.controller('SystemCtrl', ($scope, $timeout, services) => {
 		(systeminfo
 			.system()
 			.then((data) => {

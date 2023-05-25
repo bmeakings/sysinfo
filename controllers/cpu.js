@@ -2,8 +2,8 @@
 
 (angular
 	.module(appName)
-	.controller('ProcessorCtrl', function($scope, $timeout, services) {
-		const getStaticData = () => {
+	.controller('ProcessorCtrl', ($scope, $timeout, services) => {
+		function getStaticData() {
 			$scope.$parent.sysinfo.cpu.info = {};
 
 			(systeminfo
@@ -120,7 +120,7 @@
 			);
 		};
 
-		const getDynamicData = () => {
+		function getDynamicData() {
 			$scope.$parent.sysinfo.cpu.info.freq = {};
 
 			(systeminfo

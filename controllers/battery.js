@@ -2,7 +2,7 @@
 
 (angular
 	.module(appName)
-	.controller('BatteryCtrl', function($scope, $timeout, services) {
+	.controller('BatteryCtrl', ($scope, $timeout, services) => {
 		(systeminfo
 			.battery()
 			.then((data) => {

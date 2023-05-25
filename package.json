@@ -14,7 +14,7 @@
     "systeminformation": "^5.17.12"
   },
   "build": {
-    "appId": "com.test.app",
+    "appId": "com.github.bmeakings.sysinfapp",
     "productName": "sysinfo",
     "copyright": "Copyright © Ben Meakings"
   }

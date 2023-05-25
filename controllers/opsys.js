@@ -2,7 +2,7 @@
 
 (angular
 	.module(appName)
-	.controller('OperatingSystemCtrl', function($scope, $timeout, services) {
+	.controller('OperatingSystemCtrl', ($scope, $timeout, services) => {
 		(systeminfo
 			.osInfo()
 			.then((data) => {

@@ -5,19 +5,21 @@
 	.factory('services', () => {
 		return {
 			cleanText(input) {
-				let output = input;
-					output = output.replaceAll('®', '');
-					output = output.replaceAll('©', '');
-					output = output.replaceAll('(TM)', '');
-					output = output.replaceAll('(tm)', '');
-					output = output.replaceAll('(R)', '');
-					output = output.replaceAll('(r)', '');
+				const output = (input
+					.replaceAll('®', '')
+					.replaceAll('©', '')
+					.replaceAll('(TM)', '')
+					.replaceAll('(tm)', '')
+					.replaceAll('(R)', '')
+					.replaceAll('(r)', '')
+				);
 
 				return output.trim();
 			},
 			formatBytes(bytes, iec) {
-				let thsnd = ((iec) ? 1024 : 1000);
-				let units = [];
+				const thsnd = ((iec) ? 1024 : 1000);
+				const units = [];
+
 				let u = 0;
 
 				if (iec)

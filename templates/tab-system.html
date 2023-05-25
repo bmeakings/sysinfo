@@ -2,19 +2,19 @@
 
 	<!-- system -->
 	<md-card class="sysinfoCard">
-		<md-card-title>{{$parent.langStrings.system}}</md-card-title>
+		<md-card-title>{{ $parent.langStrings.system }}</md-card-title>
 		<md-card-content>
 			<md-card class="md-padding">
 				<form>
 					<div layout="row">
 						<md-input-container class="md-block">
-							<label>{{$parent.langStrings.manufacturer}}</label>
+							<label>{{ $parent.langStrings.manufacturer }}</label>
 							<input type="text" ng-model="$parent.sysinfo.system.info.make" readonly="readonly">
 						</md-input-container>
 					</div>
 					<div layout="row">
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.model}}</label>
+							<label>{{ $parent.langStrings.model }}</label>
 							<input type="text" ng-model="$parent.sysinfo.system.info.model" readonly="readonly">
 						</md-input-container>
 					</div>
@@ -26,27 +26,27 @@
 	<!-- motherboard -->
 	<md-card class="sysinfoCard">
 		<md-card-title>
-			<md-card-title-text>{{$parent.langStrings.mobo}}</md-card-title-text>
-			<img class="logoImg" ng-src="{{$parent.sysinfo.system.mobo.logo}}">
+			<md-card-title-text>{{ $parent.langStrings.mobo }}</md-card-title-text>
+			<img class="logoImg" ng-src="{{ $parent.sysinfo.system.mobo.logo }}">
 		</md-card-title>
 		<md-card-content>
 			<md-card class="md-padding">
 				<form>
 					<div layout="row">
 						<md-input-container class="md-block">
-							<label>{{$parent.langStrings.make}}</label>
+							<label>{{ $parent.langStrings.make }}</label>
 							<input type="text" ng-model="$parent.sysinfo.system.mobo.make" readonly>
 						</md-input-container>
 					</div>
 					<div layout="row">
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.model}}</label>
+							<label>{{ $parent.langStrings.model }}</label>
 							<input type="text" ng-model="$parent.sysinfo.system.mobo.model" readonly>
 						</md-input-container>
 					</div>
 					<div layout="row">
 						<md-input-container class="md-block flex">
-							<label>{{$parent.langStrings.bios}}</label>
+							<label>{{ $parent.langStrings.bios }}</label>
 							<input type="text" ng-model="$parent.sysinfo.system.bios.vendor" readonly>
 						</md-input-container>
 					</div>

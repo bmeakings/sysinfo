@@ -2,7 +2,8 @@
 <html ng-app="SysInfApp">
 	<head>
 		<meta charset="UTF-8">
-		<meta http-equiv="cache-control" content="no-store">
+		<meta http-equiv="Cache-Control" content="no-store">
+		<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' data: filesystem: about: blob: ws: wss:">
 		<title>SysInfApp</title>
 		<link rel="stylesheet" type="text/css" href="./css/font-roboto.css">
 		<link rel="stylesheet" type="text/css" href="./css/angular-material.css">
@@ -29,14 +30,14 @@
 		<script type="application/javascript" src="./controllers/storage.js"></script>
 		<script type="application/javascript" src="./controllers/battery.js"></script>
 	</head>
-	<body ng-controller="MainCtrl" dir="{{langStrings._dir}}" ng-cloak>
+	<body ng-controller="MainCtrl" dir="{{ langStrings._dir }}" ng-cloak>
 		<div layout="column" layout-fill>
 
 			<!-- main -->
 			<main class="flex" ng-hide="settingsOpen">
 				<md-content>
 					<md-tabs md-selected="currTabIndex" md-border-bottom md-autoselect md-dynamic-height>
-						<md-tab ng-repeat="t in tabs" label="{{t.label}}">
+						<md-tab ng-repeat="t in tabs" label="{{ t.label }}">
 							<ng-include src="'templates/' + t.page"></ng-include>
 						</md-tab>
 					</md-tabs>
@@ -54,10 +55,10 @@
 							<md-icon md-svg-icon="./imgs/settings.svg"></md-icon>
 						</md-button>
 						<div class="flex">
-							<div class="footerText">SysInfApp {{appVersion}}</div>
-							<div class="footerText">systeminformation {{siVersion}}</div>
+							<div class="footerText">SysInfApp {{ appVersion }}</div>
+							<div class="footerText">systeminformation {{ siVersion }}</div>
 						</div>
-						<md-button class="md-raised md-primary" ng-click="exitApp()">{{langStrings.exit}}</md-button>
+						<md-button class="md-raised md-primary" ng-click="exitApp()">{{ langStrings.exit }}</md-button>
 					</div>
 				</md-toolbar>
 			</footer>
