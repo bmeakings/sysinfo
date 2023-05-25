@@ -18,8 +18,8 @@
 			},
 			formatBytes(bytes, iec) {
 				const thsnd = ((iec) ? 1024 : 1000);
-				const units = [];
 
+				let units = [];
 				let u = 0;
 
 				if (iec)
