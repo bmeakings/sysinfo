@@ -3,8 +3,8 @@
 (angular
 	.module(appName)
 	.controller('AudioCtrl', ($scope, $timeout, services) => {
-		(systeminfo
-			.audio()
+		(electronAPI
+			.sysInfo('audioInfo')
 			.then((data) => {
 				// console.log('audio data');
 				// console.log(data);

@@ -9,7 +9,6 @@
 		<link rel="stylesheet" type="text/css" href="./css/angular-material.css">
 		<link rel="stylesheet" type="text/css" href="./css/style.css">
 		<script type="application/javascript" src="./config.js"></script>
-		<script type="application/javascript" src="./js/app-update.js"></script>
 		<script type="application/javascript" src="./angular/angular.js"></script>
 		<script type="application/javascript" src="./angular/angular-animate.js"></script>
 		<script type="application/javascript" src="./angular/angular-aria.js"></script>
@@ -37,8 +36,12 @@
 			<main class="flex" ng-hide="settingsOpen">
 				<md-content>
 					<md-tabs md-selected="currTabIndex" md-border-bottom md-autoselect md-dynamic-height>
-						<md-tab ng-repeat="t in tabs" label="{{ t.label }}">
-							<ng-include src="'templates/' + t.page"></ng-include>
+						<md-tab
+							ng-repeat="t in tabs"
+							ng-if="t.show"
+							label="{{ langStrings[t.name] }}"
+						>
+							<ng-include src="'templates/tab-' + t.name + '.html'"></ng-include>
 						</md-tab>
 					</md-tabs>
 				</md-content>

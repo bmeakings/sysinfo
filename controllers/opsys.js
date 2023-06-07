@@ -3,8 +3,8 @@
 (angular
 	.module(appName)
 	.controller('OperatingSystemCtrl', ($scope, $timeout, services) => {
-		(systeminfo
-			.osInfo()
+		(electronAPI
+			.sysInfo('osInfo')
 			.then((data) => {
 				// console.log('os info');
 				// console.log(data);

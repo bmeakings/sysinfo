@@ -3,8 +3,8 @@
 (angular
 	.module(appName)
 	.controller('BatteryCtrl', ($scope, $timeout, services) => {
-		(systeminfo
-			.battery()
+		(electronAPI
+			.sysInfo('batteryInfo')
 			.then((data) => {
 				// console.log('battery info');
 				// console.log(data);

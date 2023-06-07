@@ -6,8 +6,8 @@
 		function getStaticData() {
 			$scope.$parent.sysinfo.cpu.info = {};
 
-			(systeminfo
-				.cpu()
+			(electronAPI
+				.sysInfo('cpuInfo')
 				.then((data) => {
 					// console.log('cpu data');
 					// console.log(data);
@@ -123,8 +123,8 @@
 		function getDynamicData() {
 			$scope.$parent.sysinfo.cpu.info.freq = {};
 
-			(systeminfo
-				.cpuCurrentSpeed()
+			(electronAPI
+				.sysInfo('cpuClock')
 				.then((data) => {
 					// console.log('speed data');
 					// console.log(data);
@@ -143,8 +143,8 @@
 				})
 			);
 /*
-			(systeminfo
-				.cpuTemperature()
+			(electronAPI
+				.sysInfo('cpuTemps')
 				.then((data) => {
 					console.log('temp data');
 					console.log(data);
@@ -160,8 +160,8 @@
 				})
 			);
 */
-			(systeminfo
-				.currentLoad()
+			(electronAPI
+				.sysInfo('cpuLoad')
 				.then((data) => {
 					// console.log('load data');
 					// console.log(data);
@@ -183,23 +183,23 @@
 			setTimeout(getDynamicData, $scope.$parent.updateFreq);
 		};
 /*
-		(systeminfo
-			.cpuCache()
+		(electronAPI
+			.sysInfo('cpuCache')
 			.then((data) => {
 				console.log('cache data');
 				console.log(data);
 			})
 		);
 
-		(systeminfo
-			.cpuFlags()
+		(electronAPI
+			.sysInfo('cpuFlags')
 			.then((data) => {
 				console.log('flags data');
 				console.log(data);
 
-				const cpuFlags = data.split(' ').join(', ');
+				// const cpuFlags = data.split(' ').join(', ');
 
-				$scope.$parent.sysinfo.cpu.flags = cpuFlags;
+				// $scope.$parent.sysinfo.cpu.flags = cpuFlags;
 			})
 			.catch((err) => {
 				console.log(err);

@@ -3,8 +3,8 @@
 (angular
 	.module(appName)
 	.controller('StorageCtrl', ($scope, $timeout, services) => {
-		(systeminfo
-			.diskLayout()
+		(electronAPI
+			.sysInfo('diskLayout')
 			.then((data) => {
 				// console.log('disk info');
 				// console.log(data);
@@ -40,8 +40,8 @@
 			})
 		);
 
-		(systeminfo
-			.blockDevices()
+		(electronAPI
+			.sysInfo('blockDevices')
 			.then((data) => {
 				// console.log('devices info');
 				// console.log(data);

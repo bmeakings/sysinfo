@@ -2,22 +2,19 @@
 
 const appName = 'SysInfApp';
 
-const ipc = require('electron').ipcRenderer;
-const systeminfo = require('systeminformation');
-
 (angular
 	.module(appName, ['ngMaterial'])
 	.controller('MainCtrl', ($scope, $http, $timeout) => {
-		const savedLang = localStorage.getItem('language');
+		const savedSettings = JSON.parse(localStorage.getItem('settings') || '{}');
 
-		$scope.currLang = savedLang || 'en';
+		$scope.settings = {};
+		$scope.currLang = (savedSettings.language || 'en');
 		$scope.langStrings = {};
 		$scope.currTabIndex = 0;
 		$scope.settingsOpen = false;
-		$scope.tabs = [];
 		$scope.updateFreq = 1000;
 		$scope.appVersion = '0.0.1';
-		$scope.siVersion = systeminfo.version();
+		$scope.siVersion = electronAPI.sysInfo('siVersion');
 
 		$scope.sysinfo = {
 			'cpu': {},
@@ -32,14 +29,14 @@ const systeminfo = require('systeminformation');
 		};
 
 		$scope.tabs = [
-			{'page': 'tab-cpu.html', 'label': '', 'string': 'cpu'},
-			{'page': 'tab-ram.html', 'label': '', 'string': 'ram'},
-			{'page': 'tab-gpu.html', 'label': '', 'string': 'gpu'},
-			{'page': 'tab-audio.html', 'label': '', 'string': 'audio'},
-			{'page': 'tab-system.html', 'label': '', 'string': 'system'},
-			{'page': 'tab-opsys.html', 'label': '', 'string': 'opsys'},
-			{'page': 'tab-storage.html', 'label': '', 'string': 'storage'},
-			{'page': 'tab-battery.html', 'label': '', 'string': 'battery'},
+			{'show': true, 'name': 'cpu'},
+			{'show': true, 'name': 'ram'},
+			{'show': true, 'name': 'gpu'},
+			{'show': true, 'name': 'audio'},
+			{'show': true, 'name': 'system'},
+			{'show': true, 'name': 'opsys'},
+			{'show': true, 'name': 'storage'},
+			{'show': true, 'name': 'battery'},
 		];
 
 		$scope.setLanguage = (lang) => {
@@ -47,14 +44,8 @@ const systeminfo = require('systeminformation');
 				.get('./l10n/' + lang + '.json')
 				.then((response) => {
 					try {
+						$scope.currLang = lang;
 						$scope.langStrings = response.data;
-
-						for (const i of $scope.tabs) {
-							const tabLabel = $scope.langStrings[i.string];
-
-							if (tabLabel)
-								i.label = tabLabel;
-						}
 					}
 					catch (e) {
 						console.log(e);
@@ -78,8 +69,20 @@ const systeminfo = require('systeminformation');
 		};
 
 		$scope.exitApp = () => {
-			ipc.send('exitApp');
+			window.electronAPI.exitApp();
 		};
+
+		$scope.$on('settingsChanged', (event, data) => {
+			$scope.settings = data;
+
+			if (data.language != $scope.currLang)
+				$scope.setLanguage(data.language);
+
+			$timeout(() => {
+				for (const i of $scope.tabs)
+					i.show = data['show_tab_' + i.name];
+			});
+		});
 
 		$scope.setLanguage($scope.currLang);
 	})

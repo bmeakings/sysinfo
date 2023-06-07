@@ -39,18 +39,18 @@
 				<form>
 					<div layout="row">
 						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.name }}</label>
+							<input type="text" ng-model="item.name" readonly="readonly">
+						</md-input-container>
+					</div>
+					<div layout="row">
+						<md-input-container class="md-block flex">
 							<label>{{ $parent.langStrings.type }}</label>
 							<input type="text" ng-model="item.type" readonly="readonly">
 						</md-input-container>
 						<md-input-container class="md-block flex">
 							<label>{{ $parent.langStrings.interface }}</label>
 							<input type="text" ng-model="item.interface" readonly="readonly">
-						</md-input-container>
-					</div>
-					<div layout="row">
-						<md-input-container class="md-block flex">
-							<label>{{ $parent.langStrings.name }}</label>
-							<input type="text" ng-model="item.name" readonly="readonly">
 						</md-input-container>
 					</div>
 					<div layout="row">

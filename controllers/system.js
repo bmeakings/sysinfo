@@ -3,8 +3,8 @@
 (angular
 	.module(appName)
 	.controller('SystemCtrl', ($scope, $timeout, services) => {
-		(systeminfo
-			.system()
+		(electronAPI
+			.sysInfo('systemInfo')
 			.then((data) => {
 				// console.log('system data');
 				// console.log(data);
@@ -29,8 +29,8 @@
 			})
 		);
 
-		(systeminfo
-			.baseboard()
+		(electronAPI
+			.sysInfo('moboInfo')
 			.then((data) => {
 				// console.log('mobo data');
 				// console.log(data);
@@ -78,8 +78,8 @@
 			})
 		);
 
-		(systeminfo
-			.bios()
+		(electronAPI
+			.sysInfo('biosInfo')
 			.then((data) => {
 				// console.log('bios data');
 				// console.log(data);

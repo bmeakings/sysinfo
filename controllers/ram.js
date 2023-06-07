@@ -4,8 +4,8 @@
 	.module(appName)
 	.controller('MemoryCtrl', ($scope, $timeout, services) => {
 		function getStaticData() {
-			(systeminfo
-				.memLayout()
+			(electronAPI
+				.sysInfo('memLayout')
 				.then((data) => {
 					// console.log('ram layout data');
 					// console.log(data);
@@ -37,8 +37,8 @@
 		}
 
 		function getDynamicData() {
-			(systeminfo
-				.mem()
+			(electronAPI
+				.sysInfo('memInfo')
 				.then((data) => {
 					// console.log('ram data');
 					// console.log(data);

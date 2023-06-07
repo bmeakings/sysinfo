@@ -3,8 +3,8 @@
 (angular
 	.module(appName)
 	.controller('GraphicsCtrl', ($scope, $timeout, services) => {
-		(systeminfo
-			.graphics()
+		(electronAPI
+			.sysInfo('gpuInfo')
 			.then((data) => {
 				// console.log('gpu data');
 				// console.log(data);

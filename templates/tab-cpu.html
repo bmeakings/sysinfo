@@ -62,6 +62,35 @@
 		</md-card-content>
 	</md-card>
 
+	<!-- cache -->
+	<md-card class="sysinfoCard">
+		<md-card-title>{{ $parent.langStrings.cache }}</md-card-title>
+		<md-card-content>
+			<md-card class="md-padding">
+				<form>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.cache_l1d }}</label>
+							<input type="text" ng-model="$parent.sysinfo.cpu.info.cache.l1d" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.cache_l1i }}</label>
+							<input type="text" ng-model="$parent.sysinfo.cpu.info.cache.l1i" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.cache_l2t }}</label>
+							<input type="text" ng-model="$parent.sysinfo.cpu.info.cache.l2" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.cache_l3t }}</label>
+							<input type="text" ng-model="$parent.sysinfo.cpu.info.cache.l3" readonly>
+						</md-input-container>
+					</div>
+				</form>
+			</md-card>
+		</md-card-content>
+	</md-card>
+
 	<!-- clock speed -->
 	<md-card class="sysinfoCard">
 		<md-card-title>{{ $parent.langStrings.clock }}</md-card-title>
@@ -140,33 +169,4 @@
 		</md-card-content>
 	</md-card>
 -->
-	<!-- cache -->
-	<md-card class="sysinfoCard">
-		<md-card-title>{{ $parent.langStrings.cache }}</md-card-title>
-		<md-card-content>
-			<md-card class="md-padding">
-				<form>
-					<div layout="row">
-						<md-input-container class="md-block flex">
-							<label>{{ $parent.langStrings.cache_l1d }}</label>
-							<input type="text" ng-model="$parent.sysinfo.cpu.info.cache.l1d" readonly>
-						</md-input-container>
-						<md-input-container class="md-block flex">
-							<label>{{ $parent.langStrings.cache_l1i }}</label>
-							<input type="text" ng-model="$parent.sysinfo.cpu.info.cache.l1i" readonly>
-						</md-input-container>
-						<md-input-container class="md-block flex">
-							<label>{{ $parent.langStrings.cache_l2t }}</label>
-							<input type="text" ng-model="$parent.sysinfo.cpu.info.cache.l2" readonly>
-						</md-input-container>
-						<md-input-container class="md-block flex">
-							<label>{{ $parent.langStrings.cache_l3t }}</label>
-							<input type="text" ng-model="$parent.sysinfo.cpu.info.cache.l3" readonly>
-						</md-input-container>
-					</div>
-				</form>
-			</md-card>
-		</md-card-content>
-	</md-card>
-
 </md-content>
