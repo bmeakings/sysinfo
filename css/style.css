@@ -9,6 +9,9 @@ html, body {
 main.flex {
 	overflow-y: auto;
 }
+md-checkbox .md-label {
+	margin-top: 12px;
+}
 md-card > md-card-title {
 	font-weight: bold;
 	padding: 8px;
@@ -72,4 +75,13 @@ body[dir="rtl"] #settingsBtn {
 }
 .footerText {
 	font-size: 14px;
+}
+#settingsCard > md-card-content > md-checkbox {
+	width: 100%;
+}
+#settingsCard > md-card-content > div.layout-row {
+	padding: 8px 3px 15px 0px;
+}
+#settingsCard > md-card-content > div.layout-row > md-select {
+	height: 25px;
 }
