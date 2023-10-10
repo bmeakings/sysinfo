@@ -48,16 +48,14 @@
 								cpuLogo += '_athlon-64';
 							else if (cpuName.includes('Athlon'))
 								cpuLogo += '_athlon';
+							else if (cpuName.includes('Opteron'))
+								cpuLogo += '_opteron';
 							else if (cpuName.includes('Phenom II'))
 								cpuLogo += '_phenom2';
 							else if (cpuName.includes('Phenom'))
 								cpuLogo += '_phenom';
 							else if (cpuName.includes('FX'))
 								cpuLogo += '_fx';
-							else if (cpuName.includes('Opteron'))
-								cpuLogo += '_opteron';
-							else if (cpuName.includes('Threadripper'))
-								cpuLogo += '_threadripper';
 							else if (cpuName.includes('Ryzen 3'))
 								cpuLogo += '_ryzen-3';
 							else if (cpuName.includes('Ryzen 5'))
@@ -66,6 +64,8 @@
 								cpuLogo += '_ryzen-7';
 							else if (cpuName.includes('Ryzen 9'))
 								cpuLogo += '_ryzen-9';
+							else if (cpuName.includes('Threadripper'))
+								cpuLogo += '_threadripper';
 							else if (cpuName.includes('Epyc'))
 								cpuLogo += '_epyc';
 						}
@@ -74,6 +74,10 @@
 								cpuLogo += '_celeron';
 							else if (cpuName.includes('Pentium 4'))
 								cpuLogo += '_pentium4';
+							else if (cpuName.includes('Pentium III'))
+								cpuLogo += '_pentium3';
+							else if (cpuName.includes('Pentium II'))
+								cpuLogo += '_pentium2';
 							else if (cpuName.includes('Pentium'))
 								cpuLogo += '_pentium';
 							else if (cpuName.includes('Core i3'))
