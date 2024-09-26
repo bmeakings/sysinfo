@@ -9,8 +9,8 @@
 			(electronAPI
 				.sysInfo('cpuInfo')
 				.then((data) => {
-					// console.log('cpu data');
-					// console.log(data);
+					console.log('cpu data');
+					console.log(data);
 
 					const cpuMake = services.cleanText(data.manufacturer) || '?';
 					const cpuName = services.cleanText(data.brand) || '?';
@@ -30,70 +30,76 @@
 					const cpuCacheL2 = ((data.cache.l2) ? services.formatBytes(data.cache.l2, true) : '?');
 					const cpuCacheL3 = ((data.cache.l3) ? services.formatBytes(data.cache.l3, true) : '?');
 
-					let cpuLogo = './imgs/cpu-logos/' + cpuMake.toLowerCase();
+					let cpuLogo = './imgs/logos-cpu/';
 
 					switch (cpuMake.toLowerCase()) {
 						case 'amd': {
+							cpuLogo += 'amd_';
+
 							if (cpuName.includes('Duron'))
-								cpuLogo += '_duron';
+								cpuLogo += 'duron.png';
 							else if (cpuName.includes('Sempron'))
-								cpuLogo += '_sempron';
+								cpuLogo += 'sempron.png';
 							else if (cpuName.includes('Athlon XP'))
-								cpuLogo += '_athlon-xp';
+								cpuLogo += 'athlon-xp.png';
 							else if (cpuName.includes('Athlon 64 X2'))
-								cpuLogo += '_athlon-64x2';
+								cpuLogo += 'athlon-64x2.png';
 							else if (cpuName.includes('Athlon 64 FX'))
-								cpuLogo += '_athlon-64fx';
+								cpuLogo += 'athlon-64fx.png';
 							else if (cpuName.includes('Athlon 64'))
-								cpuLogo += '_athlon-64';
+								cpuLogo += 'athlon-64.png';
 							else if (cpuName.includes('Athlon'))
-								cpuLogo += '_athlon';
+								cpuLogo += 'athlon.png';
 							else if (cpuName.includes('Opteron'))
-								cpuLogo += '_opteron';
+								cpuLogo += 'opteron.png';
 							else if (cpuName.includes('Phenom II'))
-								cpuLogo += '_phenom2';
+								cpuLogo += 'phenom2.png';
 							else if (cpuName.includes('Phenom'))
-								cpuLogo += '_phenom';
+								cpuLogo += 'phenom.png';
 							else if (cpuName.includes('FX'))
-								cpuLogo += '_fx';
+								cpuLogo += 'fx.png';
 							else if (cpuName.includes('Ryzen 3'))
-								cpuLogo += '_ryzen-3';
+								cpuLogo += 'ryzen-3.png';
 							else if (cpuName.includes('Ryzen 5'))
-								cpuLogo += '_ryzen-5';
+								cpuLogo += 'ryzen-5.png';
 							else if (cpuName.includes('Ryzen 7'))
-								cpuLogo += '_ryzen-7';
+								cpuLogo += 'ryzen-7.png';
 							else if (cpuName.includes('Ryzen 9'))
-								cpuLogo += '_ryzen-9';
+								cpuLogo += 'ryzen-9.png';
 							else if (cpuName.includes('Threadripper'))
-								cpuLogo += '_threadripper';
+								cpuLogo += 'threadripper.png';
 							else if (cpuName.includes('Epyc'))
-								cpuLogo += '_epyc';
+								cpuLogo += 'epyc.png';
+
+							break;
 						}
 						case 'intel': {
+							cpuLogo += 'intel_';
+
 							if (cpuName.includes('Celeron'))
-								cpuLogo += '_celeron';
+								cpuLogo += 'celeron.png';
 							else if (cpuName.includes('Pentium 4'))
-								cpuLogo += '_pentium4';
+								cpuLogo += 'pentium-4.png';
 							else if (cpuName.includes('Pentium III'))
-								cpuLogo += '_pentium3';
-							else if (cpuName.includes('Pentium II'))
-								cpuLogo += '_pentium2';
+								cpuLogo += 'pentium-3.png';
+							else if (cpuName.includes('Pentium m'))
+								cpuLogo += 'pentium-m.png';
 							else if (cpuName.includes('Pentium'))
-								cpuLogo += '_pentium';
+								cpuLogo += 'pentium.png';
 							else if (cpuName.includes('Core i3'))
-								cpuLogo += '_core-i3';
+								cpuLogo += 'core-i3.png';
 							else if (cpuName.includes('Core i5'))
-								cpuLogo += '_core-i5';
+								cpuLogo += 'core-i5.png';
 							else if (cpuName.includes('Core i7'))
-								cpuLogo += '_core-i7';
+								cpuLogo += 'core-i7.png';
 							else if (cpuName.includes('Core i9'))
-								cpuLogo += '_core-i9';
+								cpuLogo += 'core-i9.png';
 							else if (cpuName.includes('Xeon'))
-								cpuLogo += '_xeon';
+								cpuLogo += 'xeon.png';
+
+							break;
 						}
 					}
-
-					cpuLogo += '.png';
 
 					$timeout(() => {
 						$scope.$parent.sysinfo.cpu.info = {

@@ -7,15 +7,22 @@
 			<md-card ng-repeat="item in $parent.sysinfo.gpu.list" class="md-padding">
 				<form>
 					<div layout="row">
-						<md-input-container class="md-block flex">
+						<md-input-container class="md-block flex" flex="66">
 							<label>{{ $parent.langStrings.make }}</label>
 							<input type="text" ng-model="item.make" readonly>
 						</md-input-container>
+						<md-input-container class="md-block flex logoContainer" ng-if="item.logo">
+							<img class="logoImg" ng-src="{{ item.logo }}">
+						</md-input-container>
 					</div>
 					<div layout="row">
-						<md-input-container class="md-block flex">
+						<md-input-container class="md-block flex" flex="66">
 							<label>{{ $parent.langStrings.model }}</label>
 							<input type="text" ng-model="item.model" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.ram }}</label>
+							<input type="text" ng-model="item.ram" readonly>
 						</md-input-container>
 					</div>
 				</form>
@@ -49,6 +56,10 @@
 						<md-input-container class="md-block flex">
 							<label>{{ $parent.langStrings.refresh }}</label>
 							<input type="text" ng-model="item.refresh" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.pixel_depth }}</label>
+							<input type="text" ng-model="item.pixel_depth" readonly>
 						</md-input-container>
 					</div>
 					<div layout="row">

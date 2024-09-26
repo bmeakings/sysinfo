@@ -1,5 +1,5 @@
 {
-  "name": "sysinfapp",
+  "name": "sysinfo",
   "author": "Ben Meakings",
   "description": "",
   "license": "",
@@ -14,7 +14,7 @@
     "systeminformation": "^5.17.12"
   },
   "build": {
-    "appId": "com.github.bmeakings.sysinfapp",
+    "appId": "com.github.bmeakings.sysinfo",
     "productName": "sysinfo",
     "copyright": "Copyright © Ben Meakings"
   }

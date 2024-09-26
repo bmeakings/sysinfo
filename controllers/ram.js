@@ -7,8 +7,8 @@
 			(electronAPI
 				.sysInfo('memLayout')
 				.then((data) => {
-					// console.log('ram layout data');
-					// console.log(data);
+					console.log('ram layout data');
+					console.log(data);
 
 					$scope.$parent.sysinfo.ram.layout = [];
 
@@ -16,16 +16,20 @@
 						for (const i of data) {
 							const ramMake = i.manufacturer;
 							const ramPart = i.partNum;
+							const ramFormat = i.formFactor;
 							const ramSize = services.formatBytes(i.size, true);
 							const ramClock = i.clockSpeed + ' MHz';
 							const ramVoltage = i.voltageConfigured;
+							const ramECC = (i.ecc) ? 'yes' : 'no';
 
 							$scope.$parent.sysinfo.ram.layout.push({
 								'make': ramMake,
 								'part': ramPart,
+								'format': ramFormat,
 								'size': ramSize,
 								'clock': ramClock,
 								'voltage': ramVoltage,
+								'ecc': ramECC,
 							});
 						}
 					});

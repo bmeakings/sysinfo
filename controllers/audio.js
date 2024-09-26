@@ -6,8 +6,8 @@
 		(electronAPI
 			.sysInfo('audioInfo')
 			.then((data) => {
-				// console.log('audio data');
-				// console.log(data);
+				console.log('audio data');
+				console.log(data);
 
 				$scope.$parent.sysinfo.audio.list = [];
 

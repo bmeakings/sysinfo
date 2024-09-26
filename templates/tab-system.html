@@ -7,7 +7,7 @@
 			<md-card class="md-padding">
 				<form>
 					<div layout="row">
-						<md-input-container class="md-block">
+						<md-input-container class="md-block flex" flex="66">
 							<label>{{ $parent.langStrings.manufacturer }}</label>
 							<input type="text" ng-model="$parent.sysinfo.system.info.make" readonly="readonly">
 						</md-input-container>
@@ -27,15 +27,17 @@
 	<md-card class="sysinfoCard">
 		<md-card-title>
 			<md-card-title-text>{{ $parent.langStrings.mobo }}</md-card-title-text>
-			<img class="logoImg" ng-src="{{ $parent.sysinfo.system.mobo.logo }}">
 		</md-card-title>
 		<md-card-content>
 			<md-card class="md-padding">
 				<form>
 					<div layout="row">
-						<md-input-container class="md-block">
+						<md-input-container class="md-block flex" flex="66">
 							<label>{{ $parent.langStrings.make }}</label>
 							<input type="text" ng-model="$parent.sysinfo.system.mobo.make" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex logoContainer">
+							<img class="logoImg" ng-src="{{ $parent.sysinfo.system.mobo.logo }}">
 						</md-input-container>
 					</div>
 					<div layout="row">

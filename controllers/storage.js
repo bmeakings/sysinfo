@@ -6,8 +6,8 @@
 		(electronAPI
 			.sysInfo('diskLayout')
 			.then((data) => {
-				// console.log('disk info');
-				// console.log(data);
+				console.log('disk info');
+				console.log(data);
 
 				$scope.$parent.sysinfo.storage.disks = [];
 

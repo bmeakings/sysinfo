@@ -19,6 +19,20 @@
 							<input type="text" ng-model="$parent.sysinfo.ram.info.available" readonly>
 						</md-input-container>
 					</div>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.ram_slots }}</label>
+							<input type="text" ng-model="$parent.sysinfo.system.mobo.ramSlots" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.installed }}</label>
+							<input type="text" ng-model="$parent.sysinfo.ram.layout.length" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.ram_max }}</label>
+							<input type="text" ng-model="$parent.sysinfo.system.mobo.maxMemory" readonly>
+						</md-input-container>
+					</div>
 				</form>
 			</md-card>
 		</md-card-content>
@@ -36,9 +50,17 @@
 						</md-input-container>
 					</div>
 					<div layout="row">
-						<md-input-container class="md-block flex">
+						<md-input-container class="md-block flex" flex="50">
 							<label>{{ $parent.langStrings.part_no }}</label>
 							<input type="text" ng-model="item.part" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex" flex="25">
+							<label>{{ $parent.langStrings.form_factor }}</label>
+							<input type="text" ng-model="item.format" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex" flex="25">
+							<label>{{ $parent.langStrings.ram_ecc }}</label>
+							<input type="text" ng-model="$parent.langStrings[item.ecc]" readonly>
 						</md-input-container>
 					</div>
 					<div layout="row">

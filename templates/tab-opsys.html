@@ -3,21 +3,31 @@
 	<md-card class="sysinfoCard">
 		<md-card-title>
 			<md-card-title-text>{{ $parent.langStrings.info }}</md-card-title-text>
-			<img class="logoImg os" ng-src="{{ $parent.sysinfo.opsys.info.logo }}">
 		</md-card-title>
 		<md-card-content>
 			<md-card class="md-padding">
 				<form>
 					<div layout="row">
-						<md-input-container class="md-block flex">
+						<md-input-container class="md-block flex" flex="66">
 							<label>{{ $parent.langStrings.name }}</label>
 							<input type="text" ng-model="$parent.sysinfo.opsys.info.name" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex logoContainer" ng-if="$parent.sysinfo.opsys.info.logo">
+							<img class="logoImg os" ng-src="{{ $parent.sysinfo.opsys.info.logo }}">
 						</md-input-container>
 					</div>
 					<div layout="row">
 						<md-input-container class="md-block flex">
 							<label>{{ $parent.langStrings.version }}</label>
 							<input type="text" ng-model="$parent.sysinfo.opsys.info.version" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.cpu_arch }}</label>
+							<input type="text" ng-model="$parent.sysinfo.opsys.info.arch" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.uefi }}</label>
+							<input type="text" ng-model="$parent.langStrings[$parent.sysinfo.opsys.info.uefi]" readonly>
 						</md-input-container>
 					</div>
 				</form>

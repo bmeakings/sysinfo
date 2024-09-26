@@ -6,8 +6,8 @@
 		(electronAPI
 			.sysInfo('batteryInfo')
 			.then((data) => {
-				// console.log('battery info');
-				// console.log(data);
+				console.log('battery info');
+				console.log(data);
 
 				const battAvail = data.hasBattery;
 				const battMake = data.manufacturer;

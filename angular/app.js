@@ -1,6 +1,6 @@
 'use strict';
 
-const appName = 'SysInfApp';
+const appName = 'SysInfo';
 
 (angular
 	.module(appName, ['ngMaterial'])

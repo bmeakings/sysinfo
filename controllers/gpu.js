@@ -6,8 +6,8 @@
 		(electronAPI
 			.sysInfo('gpuInfo')
 			.then((data) => {
-				// console.log('gpu data');
-				// console.log(data);
+				console.log('gpu data');
+				console.log(data);
 
 				$scope.$parent.sysinfo.gpu.list = [];
 				$scope.$parent.sysinfo.display.list = [];
@@ -17,12 +17,32 @@
 					for (const i of data.controllers) {
 						const gpuMake = services.cleanText(i.vendor);
 						const gpuModel = services.cleanText(i.model);
-						// const gpuMemory = i.vram;
+						const gpuMemory = services.formatBytes(i.vram * 1048576, true);
+
+						let gpuLogo = './imgs/logos-gpu/';
+
+						if (!gpuMake)
+							gpuLogo = '';
+						else if (gpuModel.includes('Radeon'))
+							gpuLogo += 'radeon.svg';
+						else if (gpuModel.includes('GeForce'))
+							gpuLogo += 'geforce.svg';
+						else if (gpuMake.includes('3dfx'))
+							gpuLogo += '3dfx.svg';
+						else if (gpuMake.includes('ATI'))
+							gpuLogo += 'ati.svg';
+						else if (gpuMake.includes('Matrox'))
+							gpuLogo += 'matrox.svg';
+						else if (gpuMake.includes('Intel'))
+							gpuLogo += 'intel.svg';
+						else if (gpuMake.includes('S3 Graphics'))
+							gpuLogo += 's3.svg';
 
 						$scope.$parent.sysinfo.gpu.list.push({
 							'make': gpuMake,
+							'logo': gpuLogo,
 							'model': gpuModel,
-							// 'ram': gpuMemory,
+							'ram': gpuMemory,
 						});
 					}
 
@@ -38,15 +58,17 @@
 						const dispMaxResY = i.resolutionY;
 						const dispSizeX = i.sizeX;
 						const dispSizeY = i.sizeY;
+						const dispPxlDepth = i.pixelDepth;
 
 						$scope.$parent.sysinfo.display.list.push({
 							'make': dispMake,
 							'model': dispModel,
 							'connection': dispConnect,
 							'refresh': dispRefresh + ' Hz',
+							'pixel_depth': dispPxlDepth + ' bpp',
 							'res_curr': dispCurrResX + ' x ' + dispCurrResY,
 							'res_max': dispMaxResX + ' x ' + dispMaxResY,
-							'phy_size': ((dispSizeX && dispSizeY) ? dispSizeX + ' x ' + dispSizeY + ' mm' : '?'),
+							'phy_size': ((dispSizeX && dispSizeY) ? dispSizeX + ' x ' + dispSizeY + ' cm' : '?'),
 						});
 					}
 				});

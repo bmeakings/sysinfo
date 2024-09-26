@@ -36,11 +36,23 @@ md-input-container {
 form > .layout-row:last-child > md-input-container {
 	margin-bottom: 0px;
 }
+.logoContainer {
+	position: relative;
+	margin: 0px;
+}
 .logoImg {
+	float: right;
+	max-width: 100%;
+	max-height: 48px;
+}
+#cpuLogoImg {
+	display: block;
 	position: absolute;
-	top: 45px;
-	max-width: 150px;
-	max-height: 78px;
+	top: 0px;
+	right: 0px;
+	height: 100%;
+	max-width: initial;
+	max-height: initial;
 }
 body[dir="ltr"] .logoImg {
 	right: 16px;
