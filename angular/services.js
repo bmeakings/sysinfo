@@ -6,8 +6,9 @@
 		return {
 			cleanText(input) {
 				const output = (input
-					.replaceAll('®', '')
 					.replaceAll('©', '')
+					.replaceAll('®', '')
+					.replaceAll('™', '')
 					.replaceAll('(TM)', '')
 					.replaceAll('(tm)', '')
 					.replaceAll('(R)', '')

@@ -96,6 +96,8 @@
 								cpuLogo += 'core-i9.png';
 							else if (cpuName.includes('Xeon'))
 								cpuLogo += 'xeon.png';
+							else if (cpuName.includes('Atom'))
+								cpuLogo += 'atom.png';
 
 							break;
 						}
