@@ -82,7 +82,7 @@
 								cpuLogo += 'pentium-4.png';
 							else if (cpuName.includes('Pentium III'))
 								cpuLogo += 'pentium-3.png';
-							else if (cpuName.includes('Pentium m'))
+							else if (cpuName.includes('Pentium M'))
 								cpuLogo += 'pentium-m.png';
 							else if (cpuName.includes('Pentium'))
 								cpuLogo += 'pentium.png';
