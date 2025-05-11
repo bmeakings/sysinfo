@@ -86,6 +86,14 @@
 								cpuLogo += 'pentium-m.png';
 							else if (cpuName.includes('Pentium'))
 								cpuLogo += 'pentium.png';
+							else if (cpuName.includes('Core2 Solo'))
+								cpuLogo += 'core2-solo.png';
+							else if (cpuName.includes('Core2 Duo'))
+								cpuLogo += 'core2-duo.png';
+							else if (cpuName.includes('Core2 Quad'))
+								cpuLogo += 'core2-quad.png';
+							else if (cpuName.includes('Core2 Extreme'))
+								cpuLogo += 'core2-extreme.png';
 							else if (cpuName.includes('Core i3'))
 								cpuLogo += 'core-i3.png';
 							else if (cpuName.includes('Core i5'))
