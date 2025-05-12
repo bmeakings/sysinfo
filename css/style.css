@@ -50,9 +50,8 @@ form > .layout-row:last-child > md-input-container {
 	position: absolute;
 	top: 0px;
 	right: 0px;
-	height: 100%;
-	max-width: initial;
-	max-height: initial;
+	max-width: 100px;
+	max-height: 80px;
 }
 body[dir="ltr"] .logoImg {
 	right: 16px;
