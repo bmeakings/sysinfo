@@ -1,0 +1,37 @@
+<md-content ng-controller="BluetoothCtrl">
+
+	<md-card class="sysinfoCard">
+		<md-card-title>{{ $parent.langStrings.bluetooth_devices }}</md-card-title>
+		<md-card-content>
+			<md-card ng-repeat="item in $parent.sysinfo.bluetooth.list" class="md-padding">
+				<form>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.name }}</label>
+							<input type="text" ng-model="item.name" readonly>
+						</md-input-container>
+					</div>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.type }}</label>
+							<input type="text" ng-model="item.type" readonly>
+						</md-input-container>
+					</div>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.manufacturer }}</label>
+							<input type="text" ng-model="item.manufacturer" readonly>
+						</md-input-container>
+					</div>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.connected }}</label>
+							<input type="text" ng-model="item.connected" readonly>
+						</md-input-container>
+					</div>
+				</form>
+			</md-card-content>
+		</md-card-content>
+	</md-card>
+
+</md-content>

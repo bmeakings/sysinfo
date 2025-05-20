@@ -102,6 +102,18 @@
 								cpuLogo += 'core-i7.png';
 							else if (cpuName.includes('Core i9'))
 								cpuLogo += 'core-i9.png';
+							else if (cpuName.includes('Core 3'))
+								cpuLogo += 'core-3.png';
+							else if (cpuName.includes('Core 5'))
+								cpuLogo += 'core-5.png';
+							else if (cpuName.includes('Core 7'))
+								cpuLogo += 'core-7.png';
+							else if (cpuName.includes('Core Ultra 5'))
+								cpuLogo += 'core-ultra5.png';
+							else if (cpuName.includes('Core Ultra 7'))
+								cpuLogo += 'core-ultra7.png';
+							else if (cpuName.includes('Core Ultra 9'))
+								cpuLogo += 'core-ultra9.png';
 							else if (cpuName.includes('Xeon'))
 								cpuLogo += 'xeon.png';
 							else if (cpuName.includes('Atom'))

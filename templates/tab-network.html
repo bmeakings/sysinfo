@@ -1,0 +1,65 @@
+<md-content ng-controller="NetworkCtrl">
+
+	<md-card class="sysinfoCard">
+		<md-card-title>{{ $parent.langStrings.network_interfaces }}</md-card-title>
+		<md-card-content>
+			<md-card ng-repeat="item in $parent.sysinfo.network.list" class="md-padding">
+				<form>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.interface }}</label>
+							<input type="text" ng-model="item.interface" readonly>
+						</md-input-container>
+					</div>
+					<div layout="row">
+						<md-input-container class="md-block flex" flex="33">
+							<label>{{ $parent.langStrings.type }}</label>
+							<input type="text" ng-model="item.interfaceType" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex" flex="33">
+							<label>{{ $parent.langStrings.data_rate }}</label>
+							<input type="text" ng-model="item.interfaceSpeed" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex" flex="33">
+							<label>{{ $parent.langStrings.default }}</label>
+							<input type="text" ng-model="$parent.langStrings[item.interfaceDefault]" readonly>
+						</md-input-container>
+					</div>
+					<div layout="row">
+						<md-input-container class="md-block flex" flex="50">
+							<label>{{ $parent.langStrings.ipv4_address }}</label>
+							<input type="text" ng-model="item.ipv4Address" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex" flex="50">
+							<label>{{ $parent.langStrings.ipv4_subnet }}</label>
+							<input type="text" ng-model="item.ipv4Subnet" readonly>
+						</md-input-container>
+					</div>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.ipv6_address }}</label>
+							<input type="text" ng-model="item.ipv6Address" readonly>
+						</md-input-container>
+					</div>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.ipv6_subnet }}</label>
+							<input type="text" ng-model="item.ipv6Subnet" readonly>
+						</md-input-container>
+					</div>
+					<div layout="row">
+						<md-input-container class="md-block flex" flex="50">
+							<label>{{ $parent.langStrings.mac_address }}</label>
+							<input type="text" ng-model="item.macAddress" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex" flex="50">
+							<label>{{ $parent.langStrings.address_dhcp }}</label>
+							<input type="text" ng-model="$parent.langStrings[item.addressDHCP]" readonly>
+						</md-input-container>
+					</div>
+				</form>
+			</md-card-content>
+		</md-card-content>
+	</md-card>
+
+</md-content>

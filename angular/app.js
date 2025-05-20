@@ -26,6 +26,10 @@ const appName = 'SysInfo';
 			'opsys': {},
 			'storage': {},
 			'battery': {},
+			'network': {},
+			'printers': {},
+			'usb': {},
+			'bluetooth': {},
 		};
 
 		$scope.tabs = [
@@ -37,6 +41,10 @@ const appName = 'SysInfo';
 			{'show': true, 'name': 'opsys'},
 			{'show': true, 'name': 'storage'},
 			{'show': true, 'name': 'battery'},
+			{'show': true, 'name': 'network'},
+			{'show': true, 'name': 'printers'},
+			{'show': true, 'name': 'usb'},
+			{'show': true, 'name': 'bluetooth'},
 		];
 
 		$scope.setLanguage = (lang) => {

@@ -1,0 +1,49 @@
+<md-content ng-controller="PrintersCtrl">
+
+	<md-card class="sysinfoCard">
+		<md-card-title>{{ $parent.langStrings.printers }}</md-card-title>
+		<md-card-content>
+			<md-card ng-repeat="item in $parent.sysinfo.printers.list" class="md-padding">
+				<form>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.id }}</label>
+							<input type="text" ng-model="item.id" readonly>
+						</md-input-container>
+					</div>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.name }}</label>
+							<input type="text" ng-model="item.name" readonly>
+						</md-input-container>
+					</div>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.model }}</label>
+							<input type="text" ng-model="item.model" readonly>
+						</md-input-container>
+					</div>
+					<div layout="row">
+						<md-input-container class="md-block flex" flex="25">
+							<label>{{ $parent.langStrings.status }}</label>
+							<input type="text" ng-model="$parent.langStrings[item.status]" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex" flex="25">
+							<label>{{ $parent.langStrings.local }}</label>
+							<input type="text" ng-model="$parent.langStrings[item.local]" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex" flex="25">
+							<label>{{ $parent.langStrings.shared }}</label>
+							<input type="text" ng-model="$parent.langStrings[item.shared]" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex" flex="25">
+							<label>{{ $parent.langStrings.default }}</label>
+							<input type="text" ng-model="$parent.langStrings[item.default]" readonly>
+						</md-input-container>
+					</div>
+				</form>
+			</md-card-content>
+		</md-card-content>
+	</md-card>
+
+</md-content>

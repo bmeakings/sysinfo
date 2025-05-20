@@ -16,6 +16,10 @@
 			'show_tab_opsys': (savedSettings.show_tab_opsys || true),
 			'show_tab_storage': (savedSettings.show_tab_storage || true),
 			'show_tab_battery': (savedSettings.show_tab_battery || true),
+			'show_tab_network': (savedSettings.show_tab_network || true),
+			'show_tab_printers': (savedSettings.show_tab_printers || true),
+			'show_tab_usb': (savedSettings.show_tab_usb || true),
+			'show_tab_bluetooth': (savedSettings.show_tab_bluetooth || true),
 		};
 
 		function getLanguages() {

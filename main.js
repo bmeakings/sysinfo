@@ -146,6 +146,22 @@ app.whenReady().then(() => {
 		return await sysinfo.battery();
 	});
 
+	ipcMain.handle('networkInfo', async () => {
+		return await sysinfo.networkInterfaces();
+	});
+
+	ipcMain.handle('printerInfo', async () => {
+		return await sysinfo.printer();
+	});
+
+	ipcMain.handle('usbDevices', async () => {
+		return await sysinfo.usb();
+	});
+
+	ipcMain.handle('bluetoothDevices', async () => {
+		return await sysinfo.bluetoothDevices();
+	});
+
 	createAppWindow();
 	createAppMenu();
 });
