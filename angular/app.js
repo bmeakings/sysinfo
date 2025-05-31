@@ -14,9 +14,9 @@ const appName = 'SysInfo';
 		$scope.settingsOpen = false;
 		$scope.updateFreq = 1000;
 		$scope.appVersion = '0.0.1';
-		$scope.siVersion = electronAPI.sysInfo('siVersion');
 
 		$scope.sysinfo = {
+			'version': '',
 			'cpu': {},
 			'ram': {},
 			'gpu': {},
@@ -91,6 +91,13 @@ const appName = 'SysInfo';
 					i.show = data['show_tab_' + i.name];
 			});
 		});
+
+		(electronAPI
+			.sysInfo('siVersion')
+			.then((data) => {
+				$scope.sysinfo.version = data;
+			}
+		));
 
 		$scope.setLanguage($scope.currLang);
 	})

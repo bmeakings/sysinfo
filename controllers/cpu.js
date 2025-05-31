@@ -70,6 +70,8 @@
 								cpuLogo += 'threadripper.png';
 							else if (cpuName.includes('Epyc'))
 								cpuLogo += 'epyc.png';
+							else
+								cpuLogo = '';
 
 							break;
 						}
@@ -118,6 +120,8 @@
 								cpuLogo += 'xeon.png';
 							else if (cpuName.includes('Atom'))
 								cpuLogo += 'atom.png';
+							else
+								cpuLogo = '';
 
 							break;
 						}
@@ -154,6 +158,7 @@
 
 		function getDynamicData() {
 			$scope.$parent.sysinfo.cpu.info.freq = {};
+			// $scope.$parent.sysinfo.cpu.info.temp = {};
 
 			(electronAPI
 				.sysInfo('cpuClock')
@@ -178,14 +183,14 @@
 			(electronAPI
 				.sysInfo('cpuTemps')
 				.then((data) => {
-					console.log('temp data');
+					console.log('cpu temperature data');
 					console.log(data);
 
 					const cpuMainTemp = data.main;
 					const cpuCoresTemp = data.cores;
 
 					$timeout(() => {
-						$scope.$parent.sysinfo.cpu.temp = {
+						$scope.$parent.sysinfo.cpu.info.temp = {
 							'curr': (cpuMainTemp > 0) ? cpuMainTemp + ' °C' : '?',
 						};
 					});

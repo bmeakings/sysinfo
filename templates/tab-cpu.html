@@ -13,7 +13,7 @@
 							<label>{{ $parent.langStrings.manufacturer }}</label>
 							<input type="text" ng-model="$parent.sysinfo.cpu.info.make" readonly="readonly" >
 						</md-input-container>
-						<md-input-container class="md-block flex logoContainer">
+						<md-input-container class="md-block flex logoContainer" ng-if="$parent.sysinfo.cpu.info.logo">
 							<img id="cpuLogoImg" class="logoImg" ng-src="{{ $parent.sysinfo.cpu.info.logo }}">
 						</md-input-container>
 					</div>

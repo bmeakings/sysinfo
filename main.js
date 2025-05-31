@@ -1,6 +1,6 @@
 'use strict';
 
-const { app, BrowserWindow, Menu, ipcMain } = require('electron');
+const { app, BrowserWindow, Menu, MenuItem, ipcMain } = require('electron');
 const path = require('path');
 const sysinfo = require('systeminformation');
 
@@ -17,7 +17,22 @@ function createAppWindow() {
 			preload: path.join(__dirname, 'preload.js'),
 		},
 	});
+/*
+	appWindow.addEventListener('contextmenu', (event) => {
+		event.preventDefault();
 
+		const menu = new Menu();
+
+		menu.append(new MenuItem({
+			label: 'Copy',
+			click: () => {
+				document.execCommand('copy');
+			},
+		}));
+
+		menu.popup();
+	}, false);
+*/
 	appWindow.loadFile(path.join(__dirname, 'index.html'));
 	appWindow.webContents.openDevTools({mode: 'detach'});
 

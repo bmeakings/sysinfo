@@ -11,6 +11,9 @@
 							<label>{{ $parent.langStrings.manufacturer }}</label>
 							<input type="text" ng-model="$parent.sysinfo.system.info.make" readonly="readonly">
 						</md-input-container>
+						<md-input-container class="md-block flex logoContainer" ng-if="$parent.sysinfo.system.info.logo">
+							<img class="logoImg" ng-src="{{ $parent.sysinfo.system.info.logo }}">
+						</md-input-container>
 					</div>
 					<div layout="row">
 						<md-input-container class="md-block flex">
@@ -36,7 +39,7 @@
 							<label>{{ $parent.langStrings.make }}</label>
 							<input type="text" ng-model="$parent.sysinfo.system.mobo.make" readonly>
 						</md-input-container>
-						<md-input-container class="md-block flex logoContainer">
+						<md-input-container class="md-block flex logoContainer" ng-if="$parent.sysinfo.system.mobo.logo">
 							<img class="logoImg" ng-src="{{ $parent.sysinfo.system.mobo.logo }}">
 						</md-input-container>
 					</div>

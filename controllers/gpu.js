@@ -37,6 +37,8 @@
 							gpuLogo += 'intel.svg';
 						else if (gpuMake.includes('S3 Graphics'))
 							gpuLogo += 's3.svg';
+						else
+							gpuLogo = '';
 
 						$scope.$parent.sysinfo.gpu.list.push({
 							'make': gpuMake,

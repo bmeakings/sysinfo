@@ -12,12 +12,24 @@
 				const sysMake = data.manufacturer.trim();
 				const sysModel = data.model.trim();
 
-				let oemLogo = './imgs/oem-logos/';
+				let oemLogo = './imgs/logos/';
 
 				if (!sysMake || sysMake == 'To Be Filled By O.E.M.')
 					oemLogo = '';
-				else if (sysMake.includes(''))
-					oemLogo += '';
+				else if (sysMake.includes('Alienware'))
+					oemLogo += 'alienware.png';
+				else if (sysMake.includes('Apple Inc.'))
+					oemLogo += 'apple.png';
+				else if (sysMake.includes('Dell'))
+					oemLogo += 'dell.png';
+				else if (sysMake.includes('HP'))
+					oemLogo += 'hp.png';
+				else if (sysMake.includes('Huawei'))
+					oemLogo += 'huawei.png';
+				else if (sysMake.includes('IBM'))
+					oemLogo += 'ibm.png';
+				else
+					oemLogo = '';
 
 				$timeout(() => {
 					$scope.$parent.sysinfo.system.info = {
@@ -40,7 +52,7 @@
 				const ramSlots = data.memSlots;
 				const maxMemory = services.formatBytes(data.memMax, true);
 
-				let moboLogo = './imgs/logos-mobo/';
+				let moboLogo = './imgs/logos/';
 
 				if (!moboMake)
 					moboMake = '?';
@@ -50,6 +62,8 @@
 					moboLogo += 'acer.png';
 				else if (moboMake.includes('AOpen'))
 					moboLogo += 'aopen.png';
+				else if (moboMake.includes('Apple Inc.'))
+					moboLogo += 'apple.png';
 				else if (moboMake.includes('ASRock'))
 					moboLogo += 'asrock.png';
 				else if (moboMake.includes('Asus'))
@@ -88,6 +102,8 @@
 					moboLogo += 'via.png';
 				else if (moboMake.includes('Zotac'))
 					moboLogo += 'zotac.png';
+				else
+					moboLogo = '';
 				// else if (moboMake.includes(''))
 				// 	moboLogo += '.png';
 
