@@ -44,14 +44,18 @@
 						</md-input-container>
 					</div>
 					<div layout="row">
-						<md-input-container class="md-block flex">
+						<md-input-container class="md-block flex" flex="66">
 							<label>{{ $parent.langStrings.model }}</label>
 							<input type="text" ng-model="$parent.sysinfo.system.mobo.model" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.bios_version }}</label>
+							<input type="text" ng-model="$parent.sysinfo.system.bios.version" readonly>
 						</md-input-container>
 					</div>
 					<div layout="row">
 						<md-input-container class="md-block flex">
-							<label>{{ $parent.langStrings.bios }}</label>
+							<label>{{ $parent.langStrings.bios_vendor }}</label>
 							<input type="text" ng-model="$parent.sysinfo.system.bios.vendor" readonly>
 						</md-input-container>
 					</div>

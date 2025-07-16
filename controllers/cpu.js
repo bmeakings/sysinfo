@@ -22,6 +22,10 @@
 					const cpuCores = data.physicalCores || '?';
 					const cpuThreads = data.cores || '?';
 					const cpuSocket = data.socket || '?';
+					const cpuHypthr = ((data.cores - data.efficiencyCores) / (data.physicalCores - data.efficiencyCores));
+					const cpuHybrid = (data.efficiencyCores > 0) ? 'yes' : 'no';
+					const cpuThreadsP = (data.cores - data.efficiencyCores);
+					const cpuThreadsE = (data.cores - data.performanceCores);
 					const cpuFreqBase = ((data.speed) ? data.speed + ' GHz' : '?');
 					// const cpuFreqMin = ((data.speedMin) ? data.speedMin + ' GHz' : '?');
 					// const cpuFreqMax = ((data.speedMax) ? data.speedMax + ' GHz' : '?');
@@ -31,6 +35,17 @@
 					const cpuCacheL3 = ((data.cache.l3) ? services.formatBytes(data.cache.l3, true) : '?');
 
 					let cpuLogo = './imgs/logos-cpu/';
+					let cpuSMT = $scope.$parent.langStrings[(cpuHypthr > 1) ? 'yes' : 'no'];
+					let cpuCoresP = (cpuHybrid == 'yes') ? data.performanceCores : '-';
+					let cpuCoresE = (cpuHybrid == 'yes') ? data.efficiencyCores : '-';
+
+					if (cpuHypthr > 1)
+						cpuSMT += ' (' + cpuHypthr + 'x)';
+
+					if (cpuHybrid == 'yes') {
+						cpuCoresP += ' (' + cpuThreadsP + ')';
+						cpuCoresE += ' (' + cpuThreadsE + ')';
+					}
 
 					switch (cpuMake.toLowerCase()) {
 						case 'amd': {
@@ -131,6 +146,7 @@
 						$scope.$parent.sysinfo.cpu.info = {
 							'make': cpuMake,
 							'name': cpuName,
+							'logo': cpuLogo,
 							'family': cpuFamily,
 							'model': cpuModel,
 							'stepping': cpuStepping,
@@ -138,8 +154,11 @@
 							'count': cpuCount,
 							'cores': cpuCores,
 							'threads': cpuThreads,
+							'cpu_smt': cpuSMT,
+							'hybrid': cpuHybrid,
+							'cores_p': cpuCoresP,
+							'cores_e': cpuCoresE,
 							'socket': cpuSocket,
-							'logo': cpuLogo,
 							'base_freq': cpuFreqBase,
 							'cache': {
 								'l1d': cpuCacheL1d,
@@ -154,7 +173,15 @@
 					console.log(err);
 				})
 			);
-		};
+
+			(electronAPI
+				.sysInfo('cpuLoad')
+				.then((data) => {
+					console.log('load data');
+					console.log(data);
+				})
+			);
+		}
 
 		function getDynamicData() {
 			$scope.$parent.sysinfo.cpu.info.freq = {};
@@ -206,19 +233,30 @@
 					const loadCurr = parseFloat(data.currentLoad).toFixed(1) + '%';
 					const loadUser = parseFloat(data.currentLoadUser).toFixed(1) + '%';
 					const loadSys = parseFloat(data.currentLoadSystem).toFixed(1) + '%';
+					const loadIdle = parseFloat(data.currentLoadIdle).toFixed(1) + '%';
+					const loadCores = [];
 
 					$timeout(() => {
 						$scope.$parent.sysinfo.cpu.load = {
 							'curr': loadCurr,
 							'user': loadUser,
 							'sys': loadSys,
+							'idle': loadIdle,
 						};
+
+						for (const i of data.cpus) {
+							const load = parseFloat(i.load).toFixed(0) + '%';
+
+							loadCores.push(load);
+						}
+
+						$scope.$parent.sysinfo.cpu.loadCores = loadCores;
 					});
 				})
 			);
 
 			setTimeout(getDynamicData, $scope.$parent.updateFreq);
-		};
+		}
 /*
 		(electronAPI
 			.sysInfo('cpuCache')

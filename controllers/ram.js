@@ -16,15 +16,17 @@
 						for (const i of data) {
 							const ramMake = i.manufacturer;
 							const ramPart = i.partNum;
+							const ramType = i.type;
 							const ramFormat = i.formFactor;
 							const ramSize = services.formatBytes(i.size, true);
-							const ramClock = i.clockSpeed + ' MHz';
+							const ramClock = i.clockSpeed + ' MT/s';
 							const ramVoltage = i.voltageConfigured;
 							const ramECC = (i.ecc) ? 'yes' : 'no';
 
 							$scope.$parent.sysinfo.ram.layout.push({
 								'make': ramMake,
 								'part': ramPart,
+								'type': ramType,
 								'format': ramFormat,
 								'size': ramSize,
 								'clock': ramClock,

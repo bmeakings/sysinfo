@@ -4,6 +4,32 @@
 	.module(appName)
 	.controller('StorageCtrl', ($scope, $timeout, services) => {
 		(electronAPI
+			.sysInfo('blockDevices')
+			.then((data) => {
+				console.log('block devices');
+				console.log(data);
+
+				$scope.$parent.sysinfo.storage.volumes = [];
+
+				$timeout(() => {
+					for (const i of data) {
+						const volName = i.name;
+						const volSize = ((i.size) ? services.formatBytes(i.size, true) : '-');
+						const volPhys = i.physical;
+						const volFsys = ((i.fsType) ? i.fsType.toUpperCase() : '-');
+
+						$scope.$parent.sysinfo.storage.volumes.push({
+							'name': volName,
+							'size': volSize,
+							'physical': volPhys,
+							'filesystem': volFsys,
+						});
+					}
+				});
+			})
+		);
+
+		(electronAPI
 			.sysInfo('diskLayout')
 			.then((data) => {
 				console.log('disk info');
@@ -21,6 +47,8 @@
 						const diskCylds = i.totalCylinders;
 						const diskHeads = i.totalHeads;
 						const diskSects = i.totalSectors;
+						const diskSmart = i.smartStatus;
+						const diskFirmw = i.firmwareRevision || '?';
 
 						$scope.$parent.sysinfo.storage.disks.push({
 							'type': diskType,
@@ -31,38 +59,14 @@
 							'cylinders': diskCylds,
 							'heads': diskHeads,
 							'sectors': diskSects,
+							'smart': diskSmart,
+							'firmware': diskFirmw,
 						});
 					}
 				});
 			})
 			.catch((err) => {
 				console.log(err);
-			})
-		);
-
-		(electronAPI
-			.sysInfo('blockDevices')
-			.then((data) => {
-				// console.log('devices info');
-				// console.log(data);
-
-				$scope.$parent.sysinfo.storage.volumes = [];
-
-				$timeout(() => {
-					for (const i of data) {
-						const volName = i.name;
-						const volSize = ((i.size) ? services.formatBytes(i.size, true) : '-');
-						const volPhys = i.physical;
-						const volFsys = ((i.fstype) ? i.fstype.toUpperCase() : '-');
-
-						$scope.$parent.sysinfo.storage.volumes.push({
-							'name': volName,
-							'size': volSize,
-							'physical': volPhys,
-							'filesystem': volFsys,
-						});
-					}
-				});
 			})
 		);
 	})

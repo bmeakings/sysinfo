@@ -129,11 +129,12 @@
 				console.log(data);
 
 				const biosVendor = data.vendor;
-				// const biosVersion = data.version;
+				const biosVersion = data.version;
 
 				$timeout(() => {
 					$scope.$parent.sysinfo.system.bios = {
 						'vendor': biosVendor,
+						'version': biosVersion,
 					};
 				});
 			})

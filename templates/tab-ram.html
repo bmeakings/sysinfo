@@ -54,23 +54,27 @@
 							<label>{{ $parent.langStrings.part_no }}</label>
 							<input type="text" ng-model="item.part" readonly>
 						</md-input-container>
-						<md-input-container class="md-block flex" flex="25">
-							<label>{{ $parent.langStrings.form_factor }}</label>
-							<input type="text" ng-model="item.format" readonly>
-						</md-input-container>
-						<md-input-container class="md-block flex" flex="25">
-							<label>{{ $parent.langStrings.ram_ecc }}</label>
-							<input type="text" ng-model="$parent.langStrings[item.ecc]" readonly>
-						</md-input-container>
-					</div>
-					<div layout="row">
 						<md-input-container class="md-block flex">
 							<label>{{ $parent.langStrings.capacity }}</label>
 							<input type="text" ng-model="item.size" readonly>
 						</md-input-container>
 						<md-input-container class="md-block flex">
-							<label>{{ $parent.langStrings.clock }}</label>
+							<label>{{ $parent.langStrings.type }}</label>
+							<input type="text" ng-model="item.type" readonly>
+						</md-input-container>
+					</div>
+					<div layout="row">
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.data_rate }}</label>
 							<input type="text" ng-model="item.clock" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.form_factor }}</label>
+							<input type="text" ng-model="item.format" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.ram_ecc }}</label>
+							<input type="text" ng-model="$parent.langStrings[item.ecc]" readonly>
 						</md-input-container>
 						<md-input-container class="md-block flex">
 							<label>{{ $parent.langStrings.voltage }}</label>

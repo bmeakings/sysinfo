@@ -52,6 +52,10 @@
 							<label>{{ $parent.langStrings.interface }}</label>
 							<input type="text" ng-model="item.interface" readonly="readonly">
 						</md-input-container>
+						<md-input-container class="md-block flex" flex="50">
+							<label>{{ $parent.langStrings.firmware_version }}</label>
+							<input type="text" ng-model="item.firmware" readonly="readonly">
+						</md-input-container>
 					</div>
 					<div layout="row">
 						<md-input-container class="md-block flex">
@@ -61,6 +65,10 @@
 						<md-input-container class="md-block flex">
 							<label>{{ $parent.langStrings.capacity_actual }}</label>
 							<input type="text" ng-model="item.size_actual" readonly>
+						</md-input-container>
+						<md-input-container class="md-block flex">
+							<label>{{ $parent.langStrings.smart_status }}</label>
+							<input type="text" ng-model="item.smart" readonly>
 						</md-input-container>
 					</div>
 					<div layout="row" >

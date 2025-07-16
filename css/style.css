@@ -96,3 +96,14 @@ body[dir="rtl"] #settingsBtn {
 #settingsCard > md-card-content > div.layout-row > md-select {
 	height: 25px;
 }
+.coreLoadValue {
+	position: relative;
+	z-index: 20;
+}
+.coreLoadBar {
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    background-color: aquamarine;
+    z-index: 10;
+}
