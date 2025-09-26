@@ -23,6 +23,7 @@
 					const cpuThreads = data.cores || '?';
 					const cpuSocket = data.socket || '?';
 					const cpuHypthr = ((data.cores - data.efficiencyCores) / (data.physicalCores - data.efficiencyCores));
+					const cpuSMT = (cpuHypthr > 1) ? cpuHypthr + '-way' : '-';
 					const cpuHybrid = (data.efficiencyCores > 0) ? 'yes' : 'no';
 					const cpuThreadsP = (data.cores - data.efficiencyCores);
 					const cpuThreadsE = (data.cores - data.performanceCores);
@@ -35,12 +36,8 @@
 					const cpuCacheL3 = ((data.cache.l3) ? services.formatBytes(data.cache.l3, true) : '?');
 
 					let cpuLogo = './imgs/logos-cpu/';
-					let cpuSMT = $scope.$parent.langStrings[(cpuHypthr > 1) ? 'yes' : 'no'];
 					let cpuCoresP = (cpuHybrid == 'yes') ? data.performanceCores : '-';
 					let cpuCoresE = (cpuHybrid == 'yes') ? data.efficiencyCores : '-';
-
-					if (cpuHypthr > 1)
-						cpuSMT += ' (' + cpuHypthr + 'x)';
 
 					if (cpuHybrid == 'yes') {
 						cpuCoresP += ' (' + cpuThreadsP + ')';
