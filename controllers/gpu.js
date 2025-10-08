@@ -27,14 +27,16 @@
 							gpuLogo += 'radeon.svg';
 						else if (gpuModel.includes('GeForce'))
 							gpuLogo += 'geforce.svg';
-						else if (gpuMake.includes('3dfx'))
-							gpuLogo += '3dfx.svg';
 						else if (gpuMake.includes('ATI'))
 							gpuLogo += 'ati.svg';
+						else if (gpuMake.includes('NVIDIA'))
+							gpuLogo += 'nvidia.svg';
 						else if (gpuMake.includes('Matrox'))
 							gpuLogo += 'matrox.svg';
 						else if (gpuMake.includes('Intel'))
 							gpuLogo += 'intel.svg';
+						else if (gpuMake.includes('3dfx'))
+							gpuLogo += '3dfx.svg';
 						else if (gpuMake.includes('S3 Graphics'))
 							gpuLogo += 's3.svg';
 						else
