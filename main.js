@@ -3,10 +3,13 @@
 const { app, BrowserWindow, Menu, MenuItem, ipcMain } = require('electron');
 const path = require('path');
 const sysinfo = require('systeminformation');
+const cliOpts = process.argv;
 
 let appWindow = null;
 
 function createAppWindow() {
+	const showConsole = (cliOpts.indexOf('--console') > -1);
+
 	appWindow = new BrowserWindow({
 		show: false,
 		width: 480,
@@ -34,7 +37,9 @@ function createAppWindow() {
 	}, false);
 */
 	appWindow.loadFile(path.join(__dirname, 'index.html'));
-	appWindow.webContents.openDevTools({mode: 'detach'});
+
+	if (showConsole)
+		appWindow.webContents.openDevTools({mode: 'detach'});
 
 	appWindow.once('ready-to-show', () => {
 		appWindow.show();
