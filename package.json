@@ -11,7 +11,7 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "systeminformation": "^5.17.12"
+    "systeminformation": "^5.0.0"
   },
   "build": {
     "appId": "com.github.bmeakings.sysinfo",
